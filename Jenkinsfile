@@ -45,24 +45,6 @@ pipeline {
             }
         }
 
-        // stage('E2E'){
-        //     agent {
-        //         docker {
-        //             image 'mcr.microsoft.com/playwright:v1.56.1-noble'
-        //             reuseNode true
-        //         }
-        //     }
-
-        //     steps {
-        //         sh '''
-        //             npm install -g serve
-        //             serve -s build & 
-        //             sleep 10 
-        //             npx playwright test
-        //         '''
-        //     }
-        // }
-
         stage('Deploy') {
 
             agent {
@@ -76,10 +58,9 @@ pipeline {
                 sh '''
                     npm install netlify-cli -g
                     netlify -v 
-                    echo "deployong to production site id : $NETLIFY_SITE_ID"
+                    echo "deploying to production site id : $NETLIFY_SITE_ID"
                     netlify status
-                    netlify deploy --dir=build --prod
-
+                    netlify deploy --dir=build --prod --build=false
                 '''
             }
         }
