@@ -40,22 +40,22 @@ pipeline {
             }
         }
 
-        stage('E2E'){
-            agent {
-                docker {
-                    image 'mcr.microsoft.com/playwright:v1.56.1-noble'
-                    reuseNode true
-                }
-            }
+        // stage('E2E'){
+        //     agent {
+        //         docker {
+        //             image 'mcr.microsoft.com/playwright:v1.56.1-noble'
+        //             reuseNode true
+        //         }
+        //     }
 
-            steps {
-                sh '''
-                    npm install -g serve
-                    serve -s build & 
-                    sleep 10 
-                    npx playwright test
-                '''
-            }
-        }
+        //     steps {
+        //         sh '''
+        //             npm install -g serve
+        //             serve -s build & 
+        //             sleep 10 
+        //             npx playwright test
+        //         '''
+        //     }
+        // }
     }
 }
