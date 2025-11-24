@@ -60,7 +60,7 @@ pipeline {
                     netlify -v 
                     echo "deploying to production site id : $NETLIFY_SITE_ID"
                     netlify status
-                    netlify deploy --prod --dir=build --no-build
+                    netlify deploy --no-build --prod --dir=build 
 
                 '''
             }
