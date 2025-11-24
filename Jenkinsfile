@@ -6,6 +6,12 @@ pipeline {
         NETLIFY_AUTH_TOKEN = credentials('nelify-token')
     }
 
+    triggers {
+        // This ensures CI/CD triggers automatically on GitHub push
+        githubPush()
+    }
+
+
     stages {
         //This is comment
         stage('Build') {
