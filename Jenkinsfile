@@ -57,6 +57,7 @@ pipeline {
                 docker {
                     image 'node:24-alpine'
                     reuseNode true
+                    
                 }
             }
             
@@ -65,8 +66,8 @@ pipeline {
                     npm install netlify-cli -g
                     netlify -v 
                     echo "deploying to production site id : $NETLIFY_SITE_ID"
-                    netlify status
-                    netlify deploy --no-build --prod --dir=build 
+                    # netlify status
+                    # netlify deploy --no-build --prod --dir=build 
 
                 '''
             }
