@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-            Deploy check after pushing to main branch
+            YUUBAYABISBCBISAC YUVA
         </p>
         <a
           className="App-link"
